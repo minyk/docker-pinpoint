@@ -1,7 +1,7 @@
 pinpoint-hbase:
   container_name: pinpoint-hbase
   hostname: hbase
-  image: minyk/pinpoint-hbase:1.6.0
+  image: minyk/pinpoint-hbase:1.7.0-rc1
   restart: always
   expose:
     - "2181"
@@ -25,7 +25,7 @@ pinpoint-mysql:
 pinpoint-collector:
   container_name: pinpoint-collector
   hostname: collector
-  image: minyk/pinpoint-collector:1.6.0
+  image: minyk/pinpoint-collector:1.7.0-rc1
   restart: always
   expose:
     - "9994"
@@ -48,11 +48,11 @@ pinpoint-collector:
     DISABLE_DEBUG: 'true'
   links:
     - pinpoint-hbase:hbase
- 
+
 pinpoint-web:
   container_name: pinpoint-web
   hostname: web
-  image: minyk/pinpoint-web:1.6.0
+  image: minyk/pinpoint-web:1.7.0-rc1
   restart: always
   expose:
     - "8080"
@@ -74,14 +74,14 @@ pinpoint-web:
     - pinpoint-mysql:mysql
 
 # only example
-#pinpoint-agent:
-#  image: minyk/pinpoint-agent:1.6.0
+# pinpoint-agent:
+#  image: minyk/pinpoint-agent:1.7.0-rc1
 #  net: "none"
 #  restart: unless-stopped
 #  volumes:
-#    - /var/container_data/pinpoint-agent/log:/opt/app/pinpoint-agent/log:rw
+#    - $PWD/pinpoint-agent-log:/opt/app/pinpoint-agent/log:rw
 #  environment:
-#    COLLECTOR_IP: 192.168.99.100
+#    COLLECTOR_IP: collector
 #    COLLECTOR_TCP_PORT: 9994
 #    COLLECTOR_UDP_STAT_LISTEN_PORT: 9995
 #    COLLECTOR_UDP_SPAN_LISTEN_PORT: 9996
