@@ -1,6 +1,10 @@
 Docker compose for Pinpoint
 ===========================
 
+# Deprecated warning
+
+Naver Pinpoint team started to build official docker images, So this repo will not be updated any more. See: https://github.com/naver/pinpoint-docker
+
 # What is Pinpoint
 
 Pinpoint is an APM (Application Performance Management) tool for large-scale distributed systems written in Java. See this: https://github.com/naver/pinpoint
